@@ -11,4 +11,4 @@ saves and loads sirens to and from sirens.txt
 
 see sirens.txt for siren examples
 
-to download the netbeans project zip go to release
+to download the netbeans project zip go to releases

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.happynicetime.siren.SirenController">
+   <children>
+      <TextField fx:id="text1" layoutX="14.0" layoutY="14.0" promptText="frequency time f t f t f t..." />
+      <TextField fx:id="text2" layoutX="14.0" layoutY="45.0" />
+      <TextField fx:id="text3" layoutX="14.0" layoutY="76.0" />
+      <TextField fx:id="text4" layoutX="14.0" layoutY="107.0" />
+      <TextField fx:id="text5" layoutX="14.0" layoutY="138.0" />
+      <TextField fx:id="text6" layoutX="14.0" layoutY="169.0" />
+      <TextField fx:id="text7" layoutX="14.0" layoutY="200.0" />
+      <TextField fx:id="text8" layoutX="14.0" layoutY="231.0" />
+      <TextField fx:id="text9" layoutX="14.0" layoutY="262.0" />
+      <TextField fx:id="text10" layoutX="14.0" layoutY="293.0" />
+      <TextField fx:id="text11" layoutX="14.0" layoutY="324.0" />
+      <TextField fx:id="text12" layoutX="14.0" layoutY="355.0" />
+      <CheckBox fx:id="check1" layoutX="207.0" layoutY="19.0" mnemonicParsing="false" onAction="#toggleSiren1" text="1" />
+      <CheckBox fx:id="check2" layoutX="207.0" layoutY="50.0" mnemonicParsing="false" onAction="#toggleSiren2" text="2" />
+      <CheckBox fx:id="check3" layoutX="207.0" layoutY="81.0" mnemonicParsing="false" onAction="#toggleSiren3" text="3" />
+      <CheckBox fx:id="check4" layoutX="207.0" layoutY="112.0" mnemonicParsing="false" onAction="#toggleSiren4" text="4" />
+      <CheckBox fx:id="check5" layoutX="207.0" layoutY="143.0" mnemonicParsing="false" onAction="#toggleSiren5" text="5" />
+      <CheckBox fx:id="check6" layoutX="207.0" layoutY="174.0" mnemonicParsing="false" onAction="#toggleSiren6" text="6" />
+      <CheckBox fx:id="check7" layoutX="207.0" layoutY="205.0" mnemonicParsing="false" onAction="#toggleSiren7" text="7" />
+      <CheckBox fx:id="check8" layoutX="207.0" layoutY="236.0" mnemonicParsing="false" onAction="#toggleSiren8" text="8" />
+      <CheckBox fx:id="check9" layoutX="207.0" layoutY="267.0" mnemonicParsing="false" onAction="#toggleSiren9" text="9" />
+      <CheckBox fx:id="check10" layoutX="207.0" layoutY="298.0" mnemonicParsing="false" onAction="#toggleSiren10" text="10" />
+      <CheckBox fx:id="check11" layoutX="207.0" layoutY="329.0" mnemonicParsing="false" onAction="#toggleSiren11" text="11" />
+      <CheckBox fx:id="check12" layoutX="207.0" layoutY="360.0" mnemonicParsing="false" onAction="#toggleSiren12" text="12" />
+      <Button fx:id="saveButton" layoutX="204.0" layoutY="396.0" mnemonicParsing="false" onAction="#save" text="save" />
+      <Button fx:id="loadButton" layoutX="14.0" layoutY="396.0" mnemonicParsing="false" onAction="#load" text="load" />
+   </children>
+</Pane>

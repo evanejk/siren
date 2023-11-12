@@ -67,6 +67,7 @@ public class SirenController {
                 byte[] soundData = new byte[totalSamples];
                 int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -90,6 +91,8 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
@@ -98,7 +101,7 @@ public class SirenController {
                     }
                 }
                 //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
-                clip1.open(audioFormat, soundData, 0,totalSamples);
+                clip1.open(audioFormat, soundData, 0,endOfWaves);
                 clip1.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip1.start();
                 //test sound
@@ -181,6 +184,7 @@ public class SirenController {
                 byte[] soundData = new byte[totalSamples];
                 int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -204,12 +208,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip2.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip2.open(audioFormat, soundData, 0,endOfWaves);
                 clip2.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip2.start();
             }catch(Exception e){
@@ -273,6 +282,7 @@ public class SirenController {
                 byte[] soundData = new byte[totalSamples];
                 int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -296,12 +306,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip3.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip3.open(audioFormat, soundData, 0,endOfWaves);
                 clip3.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip3.start();
             }catch(Exception e){
@@ -363,8 +378,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -388,12 +404,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip4.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip4.open(audioFormat, soundData, 0,endOfWaves);
                 clip4.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip4.start();
             }catch(Exception e){
@@ -455,8 +476,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -480,12 +502,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip5.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip5.open(audioFormat, soundData, 0,endOfWaves);
                 clip5.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip5.start();
             }catch(Exception e){
@@ -547,8 +574,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -572,12 +600,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip6.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip6.open(audioFormat, soundData, 0,endOfWaves);
                 clip6.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip6.start();
             }catch(Exception e){
@@ -639,8 +672,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -664,12 +698,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip7.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip7.open(audioFormat, soundData, 0,endOfWaves);
                 clip7.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip7.start();
             }catch(Exception e){
@@ -731,8 +770,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -756,12 +796,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip8.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip8.open(audioFormat, soundData, 0,endOfWaves);
                 clip8.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip8.start();
             }catch(Exception e){
@@ -823,8 +868,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -848,12 +894,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip9.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip9.open(audioFormat, soundData, 0,endOfWaves);
                 clip9.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip9.start();
             }catch(Exception e){
@@ -915,8 +966,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -940,12 +992,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip10.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip10.open(audioFormat, soundData, 0,endOfWaves);
                 clip10.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip10.start();
             }catch(Exception e){
@@ -1007,8 +1064,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -1032,12 +1090,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip11.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip11.open(audioFormat, soundData, 0,endOfWaves);
                 clip11.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip11.start();
             }catch(Exception e){
@@ -1099,8 +1162,9 @@ public class SirenController {
                 //System.out.println(totalSamples+" totalSamples");
                 //make the array for sound data
                 byte[] soundData = new byte[totalSamples];
-                int soundDataIndex = 0;
+              int soundDataIndex = 0;
                 double wavePosition = 0;
+                int endOfWaves = 0;
                 for(int whichTonePlayingIndex = 0;whichTonePlayingIndex < sirenPattern.length - 1/*second to last number*/;whichTonePlayingIndex += 2){
                     //figure out the frequency from and frequency to
                     double frequencyFrom = sirenPattern[whichTonePlayingIndex];
@@ -1124,12 +1188,17 @@ public class SirenController {
                         //frequencyToPlay works
                         //set wave position
                         wavePosition += (double)frequencyToPlay / (double)sampleRate;
+                        if(wavePosition >= 1)
+                            endOfWaves = soundDataIndex;
                         wavePosition = wavePosition % 1f;
                         double sinPosition = wavePosition * 2f * Math.PI;
                         soundData[soundDataIndex++] = Double.valueOf(Math.sin(sinPosition) * 127f).byteValue();
+                        //if(soundDataIndex - 1 < 421)
+                         //System.out.println(soundData[soundDataIndex - 1]);
                     }
                 }
-                clip12.open(audioFormat, soundData, 0,totalSamples);
+                //System.out.println(soundDataIndex+" now should be same as "+soundData.length); // and same as totalSamples
+                clip12.open(audioFormat, soundData, 0,endOfWaves);
                 clip12.loop(javax.sound.sampled.Clip.LOOP_CONTINUOUSLY);
                 clip12.start();
             }catch(Exception e){

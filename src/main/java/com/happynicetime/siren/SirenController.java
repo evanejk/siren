@@ -1259,18 +1259,18 @@ public class SirenController {
                 stringBuilder.append((char)readByte);
             }
             String[] stringsForBoxes = stringBuilder.toString().split("\n");
-            text1.setText(stringsForBoxes[0]);
-            text2.setText(stringsForBoxes[1]);
-            text3.setText(stringsForBoxes[2]);
-            text4.setText(stringsForBoxes[3]);
-            text5.setText(stringsForBoxes[4]);
-            text6.setText(stringsForBoxes[5]);
-            text7.setText(stringsForBoxes[6]);
-            text8.setText(stringsForBoxes[7]);
-            text9.setText(stringsForBoxes[8]);
-            text10.setText(stringsForBoxes[9]);
-            text11.setText(stringsForBoxes[10]);
-            text12.setText(stringsForBoxes[11]);
+            if(stringsForBoxes.length >= 1)text1.setText(stringsForBoxes[0]);
+            if(stringsForBoxes.length >= 2)text2.setText(stringsForBoxes[1]);
+            if(stringsForBoxes.length >= 3)text3.setText(stringsForBoxes[2]);
+            if(stringsForBoxes.length >= 4)text4.setText(stringsForBoxes[3]);
+            if(stringsForBoxes.length >= 5)text5.setText(stringsForBoxes[4]);
+            if(stringsForBoxes.length >= 6)text6.setText(stringsForBoxes[5]);
+            if(stringsForBoxes.length >= 7)text7.setText(stringsForBoxes[6]);
+            if(stringsForBoxes.length >= 8)text8.setText(stringsForBoxes[7]);
+            if(stringsForBoxes.length >= 9)text9.setText(stringsForBoxes[8]);
+            if(stringsForBoxes.length >= 10)text10.setText(stringsForBoxes[9]);
+            if(stringsForBoxes.length >= 11)text11.setText(stringsForBoxes[10]);
+            if(stringsForBoxes.length >= 12)text12.setText(stringsForBoxes[11]);
         }catch(FileNotFoundException ex){
             ex.printStackTrace();
         }catch (IOException ex){
